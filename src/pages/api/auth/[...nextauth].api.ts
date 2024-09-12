@@ -30,7 +30,7 @@ export function buildNextAuthOptions(
             email: profile.email,
             avatar_url: profile.picture,
           }
-        }
+        },
       }),
     ],
 
@@ -45,12 +45,12 @@ export function buildNextAuthOptions(
         return true
       },
 
-      async session({session, user}) {
+      async session({ session, user }) {
         return {
           ...session,
           user,
         }
-      }
+      },
     },
   }
 }

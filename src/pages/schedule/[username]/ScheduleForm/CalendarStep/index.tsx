@@ -6,7 +6,7 @@ import {
   TimerPickerItem,
   TimerPickerList,
 } from './styles'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import dayjs from 'dayjs'
 import { api } from '@/src/lib/axios'
 import { useRouter } from 'next/router'

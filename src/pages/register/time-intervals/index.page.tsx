@@ -99,7 +99,13 @@ export default function TimeIntervals() {
 
   const intervals = watch('intervals')
 
-  async function handleSetTimeIntervals(data: any) {
+  async function handleSetTimeIntervals(data: {
+    intervals: {
+      weekDay: number
+      startTimeInMinutes: number
+      endTimeInMinutes: number
+    }[]
+  }) {
     const { intervals } = data as TimeIntervalsFormOutput
     await api.post('/users/time-intervals', {
       intervals,
