@@ -58,7 +58,6 @@ const timeIntervalsFormSchema = z.object({
 })
 
 type TimeIntervalsFormInput = z.input<typeof timeIntervalsFormSchema>
-type TimeIntervalsFormOutput = z.output<typeof timeIntervalsFormSchema>
 
 export default function TimeIntervals() {
   const {
