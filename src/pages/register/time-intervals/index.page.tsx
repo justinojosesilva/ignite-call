@@ -4,7 +4,6 @@ import {
   Heading,
   MultiStep,
   Text,
-  TextInput,
 } from '@ignite-ui/react'
 import { Container, Header } from '../styles'
 import {
@@ -24,6 +23,7 @@ import { convertTimeStringToMinutes } from '@/src/utils/convert-time-string-to-m
 import { api } from '@/src/lib/axios'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
+import { TextInput } from '@/src/components/TextInput'
 
 const timeIntervalsFormSchema = z.object({
   intervals: z
@@ -99,14 +99,8 @@ export default function TimeIntervals() {
 
   const intervals = watch('intervals')
 
-  async function handleSetTimeIntervals(data: {
-    intervals: {
-      weekDay: number
-      startTimeInMinutes: number
-      endTimeInMinutes: number
-    }[]
-  }) {
-    const { intervals } = data as TimeIntervalsFormOutput
+  async function handleSetTimeIntervals(data: any) {
+    const { intervals } = data
     await api.post('/users/time-intervals', {
       intervals,
     })
@@ -152,14 +146,12 @@ export default function TimeIntervals() {
                   </IntervalDay>
                   <IntervalInputs>
                     <TextInput
-                      size="sm"
                       type="time"
                       step={60}
                       disabled={intervals[index].enabled === false}
                       {...register(`intervals.${index}.startTime`)}
                     />
                     <TextInput
-                      size="sm"
                       type="time"
                       step={60}
                       disabled={intervals[index].enabled === false}

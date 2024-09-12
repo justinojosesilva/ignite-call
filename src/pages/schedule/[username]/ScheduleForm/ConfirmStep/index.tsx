@@ -1,4 +1,4 @@
-import { Button, Text, TextArea, TextInput } from '@ignite-ui/react'
+import { Button, Text, TextArea } from '@ignite-ui/react'
 import { ConfirmForm, FormActions, FormError, FormHeader } from './styles'
 import { CalendarBlank, Clock } from 'phosphor-react'
 import { z } from 'zod'
@@ -7,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import dayjs from 'dayjs'
 import { api } from '@/src/lib/axios'
 import { useRouter } from 'next/router'
+import { TextInput } from '@/src/components/TextInput'
 
 const confirmFormSchema = z.object({
   name: z.string().min(3, { message: 'O nome precisa no mínimo 3 caracteres' }),
