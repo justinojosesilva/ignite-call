@@ -1,4 +1,4 @@
-import { styled } from "@ignite-ui/react"
+import { styled } from '@ignite-ui/react'
 
 export const TextInputContainer = styled('div', {
   backgroundColor: '$gray900',

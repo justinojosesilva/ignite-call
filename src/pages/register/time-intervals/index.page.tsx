@@ -1,10 +1,4 @@
-import {
-  Button,
-  Checkbox,
-  Heading,
-  MultiStep,
-  Text,
-} from '@ignite-ui/react'
+import { Button, Checkbox, Heading, MultiStep, Text } from '@ignite-ui/react'
 import { Container, Header } from '../styles'
 import {
   FormError,

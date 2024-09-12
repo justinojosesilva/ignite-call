@@ -38,7 +38,7 @@ export function ClaimUsernameForm() {
   return (
     <>
       <Form as="form" onSubmit={handleSubmit(handleClaimUsername)}>
-        <TextInput 
+        <TextInput
           prefix="ignite.com/"
           placeholder="seu nome"
           {...register('username')}
